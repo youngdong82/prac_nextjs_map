@@ -24,6 +24,9 @@ const Home: NextPage<Props> = ({ stores }) => {
         title='Next.js 시작하기'
         description='Next.js 시작하기 설명'
         canonical='https://prac-nextjs-map.vercel.app'
+        openGraph={{
+          url: 'https://prac-nextjs-map.vercel.app'
+        }}
       />
       <HomeHeader />
       <main style={{

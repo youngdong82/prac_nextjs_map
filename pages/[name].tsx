@@ -33,6 +33,9 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
         title='매장 상세 페이지'
         description='매장 상세 페이지입니다'
         canonical={`https://prac-nextjs-map.vercel.app/${store.name}`}
+        openGraph={{
+          url: `https://prac-nextjs-map.vercel.app/${store.name}`
+        }}
       />
       <div className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}>
         <DetailHeader
