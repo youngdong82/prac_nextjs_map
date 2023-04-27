@@ -5,6 +5,7 @@ import styles from '../styles/detail.module.scss';
 import DetailHeader from '../components/home/DetailHeader';
 import DetailContent from '@component/components/home/DetailContent';
 import useCurrentStore from '@component/hooks/useCurrentStore';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   store: Store;
@@ -27,14 +28,21 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
   }
 
   return (
-    <div className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}>
-      <DetailHeader
-        currentStore={store}
-        expanded={expanded}
-        onClickArrow={goToMap}
+    <>
+      <NextSeo
+        title='매장 상세 페이지'
+        description='매장 상세 페이지입니다'
+        canonical={`https://prac-nextjs-map.vercel.app/${store.name}`}
       />
-      <DetailContent currentStore={store} expanded={expanded} />
-    </div>
+      <div className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}>
+        <DetailHeader
+          currentStore={store}
+          expanded={expanded}
+          onClickArrow={goToMap}
+        />
+        <DetailContent currentStore={store} expanded={expanded} />
+      </div>
+    </>
   )
 };
 
